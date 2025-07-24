@@ -1,25 +1,43 @@
-import React, { useContext, useState } from "react";
+import { useContext, useRef, useEffect } from "react";
 import { CartContext } from "../store/context";
 import { addToCart } from "../store/action";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Modal from "./Modal";
+import { useLocation } from "react-router-dom";
 
-export default function OffersCard(props) {
-  const { name, description, price, id } = props;
+export default function OffersCard({ name, description, price, id }) {
   const { dispatch } = useContext(CartContext);
+  const modal = useRef();
+  const timer = useRef();
 
-  const [showNotification, setNotification] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    return () => {
+      if (timer.current) {
+        clearTimeout(timer.current);
+      }
+    };
+  }, [location.pathname]);
 
   function handleAddToCart(product) {
     const actionResult = addToCart(product);
     dispatch(actionResult);
-    setNotification(true);
-    setTimeout(() => {
-      setNotification(false);
-    }, 2000);
+
+    modal.current.open();
+
+    if (timer.current) {
+      clearTimeout(timer.current);
+    }
+
+    timer.current = setTimeout(() => {
+      if (modal.current) modal.current.close();
+    }, 5000);
   }
 
   return (
     <div key={id} className="offers-card-container">
+      <Modal ref={modal} title="Added to cart!" content={name} />
       <h2 className="offers-title">{name}</h2>
       <p className="offers-description">Description: {description}</p>
       <p className="offers-price">Price: {price} $</p>
@@ -37,9 +55,6 @@ export default function OffersCard(props) {
         Add to cart
         <ShoppingCartIcon />
       </button>
-      {showNotification && (
-        <div className="product-notification">Added to cart!</div>
-      )}
     </div>
   );
 }

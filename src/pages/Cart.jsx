@@ -14,7 +14,7 @@ export default function Cart() {
     0
   );
   return (
-    <div className="offers-section-container">
+    <div className="offers-section-container" style={{minHeight:"55vh"}}>
       {state.products.length === 0 ? (
         <div className="empty-cart-container">
           <p>You don't have any product added to cart!</p>

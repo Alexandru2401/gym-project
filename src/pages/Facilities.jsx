@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Facilities() {
   return (
-    <section className="facilities-wrapper">
+    <>
       <h2>Cardio Training Zone:</h2>
       <ul className="facilities-container">
         <li>Treadmills</li>
@@ -52,6 +52,6 @@ export default function Facilities() {
         <li>Showers and toilets with hygiene facilities </li>
         <li>Parking space for gym members.</li>
       </ul>
-    </section>
+    </>
   );
 }

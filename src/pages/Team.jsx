@@ -11,6 +11,7 @@ export function Team() {
         {trainers.map((trainer) => {
           return (
             <CoachesCard
+              key={trainer.name}
               name={trainer.name}
               description={trainer.description}
             />
