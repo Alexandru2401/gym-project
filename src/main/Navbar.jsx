@@ -18,17 +18,17 @@ export default function Navbar() {
   const [mobile, setMobile] = useState(false);
 
   return (
-    <div
-      className="bg-container"
-      style={{
-        backgroundImage: `url(${bgImg})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <p className="slogan">GymWorld! Level up your form!</p>
-      <nav>
+    // <div
+    //   className="bg-container"
+    //   style={{
+    //     backgroundImage: `url(${bgImg})`,
+    //     backgroundRepeat: "no-repeat",
+    //     backgroundSize: "cover",
+    //     backgroundPosition: "center",
+    //   }}
+    // >
+    //   <p className="slogan">GymWorld! Level up your form!</p>
+      <nav style={{marginBottom: "20px"}}>
         <div className="img-container">
           <img src={GymLogo} />
         </div>
@@ -80,6 +80,6 @@ export default function Navbar() {
           {mobile ? <FaTimes /> : <FaBars />}
         </button>
       </nav>
-    </div>
+    // </div>
   );
 }

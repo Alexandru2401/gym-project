@@ -1,4 +1,3 @@
-import React from "react";
 import CoachesCard from "../components/CoachesCard";
 import { trainers } from "../api/trainers";
 
@@ -10,6 +9,7 @@ export default function TeamDetails() {
         {trainers.map((trainer) => {
           return (
             <CoachesCard
+            key={trainer.name}
               name={trainer.name}
               description={trainer.description}
               experience={trainer.experience}

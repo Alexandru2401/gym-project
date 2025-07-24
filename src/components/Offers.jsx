@@ -1,4 +1,3 @@
-import React from "react";
 import { offers } from "../api/offers";
 import OffersCard from "./OffersCard";
 export default function Offers() {
@@ -8,7 +7,7 @@ export default function Offers() {
       {offers.map((offer) => {
         return (
           <OffersCard
-            id={offer.id}
+            key={offer.id}
             name={offer.name}
             description={offer.description}
             price={offer.price}
