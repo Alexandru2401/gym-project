@@ -101,7 +101,11 @@ export default function PayPage() {
                 />
               </label>
             </div>
-            <button type="submit" className="submit-btn">
+            <button
+              type="submit"
+              className="submit-btn"
+              disabled={state.products.length === 0}
+            >
               Pay
               <ArrowUpwardIcon />
             </button>

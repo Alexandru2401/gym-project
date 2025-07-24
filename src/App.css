@@ -857,6 +857,7 @@ dialog {
 
 .close-modal {
   background-color: #a91d3a;
+  margin-bottom: 10px;
 }
 
 .modal-cart-link {

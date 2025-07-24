@@ -37,7 +37,7 @@ export default function OffersCard({ name, description, price, id }) {
 
   return (
     <div key={id} className="offers-card-container">
-      <Modal ref={modal} title="Added to cart!" content={name} />
+      <Modal ref={modal} title="Added to cart!" content={name} link={true}/>
       <h2 className="offers-title">{name}</h2>
       <p className="offers-description">Description: {description}</p>
       <p className="offers-price">Price: {price} $</p>
