@@ -685,7 +685,7 @@ textarea {
   .why-us-section {
     margin: 20px auto;
     width: 100%;
-}
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -827,4 +827,59 @@ textarea {
   .trainer-card .trainer-card-img img {
     width: 200px;
   }
+}
+
+/* Modal styles */
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 25px;
+  border: 2px solid black;
+  border-radius: 5px;
+  max-height: 80vh;
+  max-width: 90vw;
+  overflow: auto;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.modal-title {
+  margin-bottom: 10px;
+}
+
+.modal-content {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.close-modal {
+  background-color: #a91d3a;
+}
+
+.modal-cart-link {
+  text-decoration: none;
+  color: var(--secondary-color);
+  margin-top: 10px;
+}
+
+dialog[open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translate(-50%, -65%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.9);
 }

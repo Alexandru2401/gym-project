@@ -3,6 +3,8 @@ import { CartContext } from "../store/context";
 import { removeFromCart } from "../store/action";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { Link } from "react-router-dom";
+import Modal from "../components/Modal";
+
 export default function Cart() {
   const { state, dispatch } = useContext(CartContext);
   function handleProductRemove(productId) {
@@ -14,7 +16,7 @@ export default function Cart() {
     0
   );
   return (
-    <div className="offers-section-container" style={{minHeight:"55vh"}}>
+    <div className="offers-section-container" style={{ minHeight: "55vh" }}>
       {state.products.length === 0 ? (
         <div className="empty-cart-container">
           <p>You don't have any product added to cart!</p>
@@ -44,7 +46,9 @@ export default function Cart() {
           Total price : {totalPrice.toFixed(2)}$
         </p>
       </div>
-      <Link to="/PayPage"><button className="btn-primary btn">Pay</button></Link> 
+      <Link to="/PayPage">
+        <button className="btn-primary btn">Pay</button>
+      </Link>
     </div>
   );
 }

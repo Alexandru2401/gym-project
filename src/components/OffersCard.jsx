@@ -32,7 +32,7 @@ export default function OffersCard({ name, description, price, id }) {
 
     timer.current = setTimeout(() => {
       if (modal.current) modal.current.close();
-    }, 5000);
+    }, 3000);
   }
 
   return (
