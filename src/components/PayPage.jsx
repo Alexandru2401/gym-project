@@ -7,6 +7,7 @@ import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { useState } from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { useNavigate } from "react-router-dom";
 
 export default function PayPage() {
   const [showMessage, setShowMessage] = useState(false);
@@ -17,6 +18,9 @@ export default function PayPage() {
     phone: "",
     message: "",
   });
+
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -32,6 +36,9 @@ export default function PayPage() {
   function handleSubmit(e) {
     e.preventDefault();
     setShowMessage(true);
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   }
   return (
     <section className="pay-section-container">

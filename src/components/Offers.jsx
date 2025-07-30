@@ -7,6 +7,7 @@ export default function Offers() {
       {offers.map((offer) => {
         return (
           <OffersCard
+            id={offer.id}
             key={offer.id}
             name={offer.name}
             description={offer.description}

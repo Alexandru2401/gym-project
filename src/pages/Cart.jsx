@@ -68,14 +68,18 @@ export default function Cart() {
           );
         })
       )}
-      <div className="empty-cart-container">
-        <p className="empty-cart-container">
-          Total price : {totalPrice.toFixed(2)}$
-        </p>
-      </div>
-      <Link to="/PayPage">
-        <button className="btn-primary btn">Pay</button>
-      </Link>
+      {state.products.length > 0 && (
+        <>
+          <div className="empty-cart-container">
+            <p className="empty-cart-container">
+              Total price : {totalPrice.toFixed(2)}$
+            </p>
+          </div>
+          <Link to="/PayPage">
+            <button className="btn-primary btn">Pay</button>
+          </Link>
+        </>
+      )}
     </div>
   );
 }
