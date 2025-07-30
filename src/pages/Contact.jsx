@@ -31,13 +31,14 @@ export default function Contact() {
       ...prevValues,
       [identifier]: e.target.value,
     }));
+
     setErrorMessage((prevErrors) => ({
       ...prevErrors,
-      [identifier]: "",
+      [identifier + "Error"]: "",
     }));
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     const newErrors = {
@@ -60,18 +61,20 @@ export default function Contact() {
     };
 
     setErrorMessage(newErrors);
-
     const formIsValid = Object.values(newErrors).every((err) => err === "");
 
-    if (formIsValid) setShowMessage(true);
+    if (!formIsValid) return;
+
+    setShowMessage(true);
   }
+
   return (
     <section className="contact-section">
       <h2>Contact us</h2>
       {showMessage ? (
         <div className="success-message">
           <p className="success-paragraph">
-            Your submited has been succed!
+            Your submission has been succeeded!{" "}
             <CheckCircleIcon style={{ fontSize: "24px", color: "green" }} />
           </p>
           <p className="success-paragraph">
@@ -92,6 +95,7 @@ export default function Contact() {
               onChange={(e) => handleInputChange("name", e)}
               value={enteredValues.name}
               error={errorMessage.nameError}
+              name="name"
             />
             <Input
               type="text"
@@ -102,6 +106,7 @@ export default function Contact() {
               onChange={(e) => handleInputChange("email", e)}
               value={enteredValues.email}
               error={errorMessage.emailError}
+              name="email"
             />
             <Input
               type="number"
@@ -112,6 +117,7 @@ export default function Contact() {
               onChange={(e) => handleInputChange("phone", e)}
               value={enteredValues.phone}
               error={errorMessage.phoneError}
+              name="phone"
             />
             <Input
               isTextarea
@@ -124,6 +130,7 @@ export default function Contact() {
               maxLength={400}
               value={enteredValues.message}
               error={errorMessage.messageError}
+              name="message"
             />
             <button type="submit" className="submit-btn">
               Submit

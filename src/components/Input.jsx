@@ -10,11 +10,15 @@ export default function Input({
 
   return (
     <div className="label-div">
-      <label htmlFor={id}>
+      <label
+        htmlFor={id}
+        style={{ display: "flex", alignItems: "center", gap: "10px" }}
+      >
         {" "}
         {icon}
         {label}
       </label>
+
       {isTextarea ? (
         <textarea id={id} {...props} className={inputClass} />
       ) : (
