@@ -9,6 +9,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import { isNotEmpty, isEmail } from "../utils/validation";
+import ProgressBar from "./ProgressBar";
 
 export default function PayPage() {
   const [showMessage, setShowMessage] = useState(false);
@@ -24,6 +25,8 @@ export default function PayPage() {
     emailError: "",
     phoneError: "",
   });
+
+  const timer = 3000;
 
   function handleInputChange(identifier, e) {
     setEnteredValues((prevValues) => ({
@@ -71,7 +74,7 @@ export default function PayPage() {
 
     setTimeout(() => {
       navigate("/");
-    }, 3000);
+    }, timer);
 
     dispatch({ type: "CLEAR_CART" });
   }
@@ -83,6 +86,7 @@ export default function PayPage() {
             Thank you for your payment!
             <CheckCircleIcon style={{ fontSize: "24px", color: "green" }} />
           </p>
+          <ProgressBar timeout={timer} key={timer} />
         </div>
       ) : (
         <div className="pay-section-wrapper">
