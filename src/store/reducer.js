@@ -23,6 +23,11 @@ export function cartReducer(state, action) {
       };
       return newState;
     }
+    case "CLEAR_CART":
+      return {
+        ...state,
+        products: [],
+      };
     default: {
       return state;
     }

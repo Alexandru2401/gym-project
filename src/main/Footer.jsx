@@ -14,24 +14,6 @@ export default function Footer() {
             <li key={index}>{sponsor.name}</li>
           ))}
         </ul>
-        {/* <div className="col-one">
-          <ul>
-            <li>EnerGym Nutrition</li>
-            <li>FitWear Pro</li>
-            <li>HydraBoost Drinks</li>
-            <li>PowerPulse Tech</li>
-            <li>FreshFuel Snacks</li>
-          </ul>
-        </div>
-        <div className="col-two">
-          <ul>
-            <li>PeakPerformance Gear</li>
-            <li>UltraClean Nutrition</li>
-            <li>ZenFlex Yoga</li>
-            <li>FlexiTime Fitness</li>
-            <li>MuscleMax Equipment</li>
-          </ul>
-        </div> */}
       </div>
       <div className="social-media">
         <h2>Follow us on:</h2>

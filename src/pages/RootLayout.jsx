@@ -6,7 +6,7 @@ export default function RootLayout() {
   return (
     <>
       <Navbar />
-      <main style={{marginTop:"100px"}}>
+      <main style={{marginTop:"95px"}}>
         <Outlet />
       </main>
       <Footer />

@@ -447,6 +447,7 @@ nav .nav-btn {
   font-size: var(--fs-xs);
   color: var(--secondary-color);
   font-weight: bold;
+  max-height: 1/3vh;
 }
 
 .footer .sponsor-list-container {
@@ -457,6 +458,10 @@ nav .nav-btn {
 
 .sponsor-list-container .col-one {
   margin-right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .sponsor-list-container .col-one li {
@@ -498,11 +503,14 @@ nav .nav-btn {
 .pay-section-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80vw;
   margin: 20px auto;
 }
+
+/* .products-wrapper {
+
+} */
 
 .pay-section-container .form-container .label-container {
   display: flex;
@@ -562,6 +570,7 @@ nav .nav-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 10px;
 }
 .facilities-container li {
@@ -680,6 +689,8 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 50vh;
 }
 .success-paragraph {
   font-size: var(--fs-sm);
